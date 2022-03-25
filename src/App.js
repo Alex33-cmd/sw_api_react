@@ -9,8 +9,8 @@ import { GlobalStyle } from "./GlobalStyle";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Main />
+      <Header title={"Known Galaxy Database"} image={null} />
+      <Main header={"Something... something..."} />
       <GlobalStyle />
     </div>
   );
