@@ -1,12 +1,15 @@
 import React from "react";
 
 // Styles
-import { Wrapper, Content } from "./Header.styles";
+import { Wrapper, Content, Text } from "./Header.styles";
 
-const Header = ({ image, title }) => (
+const Header = ({ image, title, text }) => (
   <Wrapper image={image}>
     <Content>
-      <h1>{title}</h1>
+      <Text>
+        <h1>{title}</h1>
+        <p>{text}</p>
+      </Text>
     </Content>
   </Wrapper>
 );
