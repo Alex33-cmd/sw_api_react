@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import config from "../config";
 
 const initialState = {
+  page: 1,
   results: [],
 };
 
