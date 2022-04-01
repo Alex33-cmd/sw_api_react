@@ -1,22 +1,23 @@
-import React from "react";
+import React from 'react';
 
 // Styles
-import { Wrapper, Content } from "./Main.styles";
+import { Wrapper, Content } from './Main.styles';
 
 // Hook
-import { useMainFetch } from "../../hooks/useMainFetch";
+import { useMainFetch } from '../../hooks/useMainFetch';
 
 const Main = ({ header, children }) => {
-  const { state, error } = useMainFetch();
+	const { state, error } = useMainFetch();
 
-  console.log(state);
-  console.log(error);
+	console.log(state);
+	console.log(error);
+	console.log(children);
 
-  return (
-    <Wrapper>
-      <h2>{header}</h2>
-      <Content>{children}</Content>
-    </Wrapper>
-  );
+	return (
+		<Wrapper>
+			<h2>{header}</h2>
+			<Content>{children}</Content>
+		</Wrapper>
+	);
 };
 export default Main;
