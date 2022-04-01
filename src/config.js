@@ -20,8 +20,8 @@ const SWAPI_URL = "https://swapi.dev/api/";
 
 // Fetching planet by ID
 const apiSettings = {
-  fetchPlanet: async (planetId) => {
-    const endpoint = `${SWAPI_URL}planets/${planetId}`;
+  fetchPlanetPages: async (page) => {
+    const endpoint = `${SWAPI_URL}planets/?page=${page}`;
     return await (await fetch(endpoint)).json();
   },
 };

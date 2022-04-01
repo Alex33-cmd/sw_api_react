@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import config from "../config";
 
 const initialState = {
-  name: "",
+  results: [],
 };
 
 export const useMainFetch = () => {
@@ -12,11 +12,11 @@ export const useMainFetch = () => {
   //   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
-  const fetchPlanets = async (id = "") => {
+  const fetchPlanets = async (page = 1) => {
     try {
       setError(false);
 
-      const planets = await config.fetchPlanet(id);
+      const planets = await config.fetchPlanetPages(page);
       setState(planets);
     } catch (error) {
       setError(true);
@@ -27,7 +27,7 @@ export const useMainFetch = () => {
   // Initial render and search
   useEffect(() => {
     setState(initialState);
-    fetchPlanets("1");
+    fetchPlanets();
   }, []);
 
   return { state, error };
